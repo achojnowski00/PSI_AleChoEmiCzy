@@ -6,6 +6,7 @@ lorem = 'Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w prz
 
 # ==========
 # zadanie 2
+# abcs
 
 
 def licznik(string, char):
@@ -22,5 +23,3 @@ howManyO = licznik(lorem, 'o')
 howManyL = licznik(lorem, 'l')
 
 print('W tekście jest {} liter "o", oraz {} liter "l"'.format(howManyO, howManyL))
-
-
