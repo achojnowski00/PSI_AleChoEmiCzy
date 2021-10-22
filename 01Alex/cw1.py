@@ -6,7 +6,6 @@ lorem = 'Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w prz
 
 # ==========
 # zadanie 2
-# abcs
 
 
 def licznik(string, char):
