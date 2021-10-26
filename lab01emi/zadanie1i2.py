@@ -7,16 +7,6 @@ nazwisko = "Czyrak"
 
 litera_1 = imie[2]
 litera_2 = nazwisko[3]
-
-count1 = 0
-count2 = 0
-
-for letter in txt:
-    if (litera_1==letter):
-        count1+=1
-    if(litera_2==letter):
-        count2+=1
-
+count1 = txt.count(litera_1)
+count2= txt.count(litera_2)
 print("W tekście jest {} liter {} oraz {} liter {}".format(count1,litera_1, count2, litera_2))
-
-#zadanie3
