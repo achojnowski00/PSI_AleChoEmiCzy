@@ -56,6 +56,40 @@ def zad4(temp, temperature_type):
 
 zad4(10, "K")
 
+# Zad 5
+
+
+class Calculator:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def add(self):
+        return self.a+self.b
+
+    def sub(self):
+        return self.a-self.b
+
+    def multiply(self):
+        return self.a*self.b
+
+    def devide(self):
+        return self.a/self.b
+
+
+x = Calculator(3, 5)
+print(x.add())
+
+# Zad 6
+
+
+class ScienceCalculator(Calculator):
+    def power(self):
+        return self.a**self.b
+
+
+SC = ScienceCalculator(5, 3)
+print(SC.power())
 # Zad 7
 
 
