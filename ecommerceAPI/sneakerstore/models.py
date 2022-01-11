@@ -40,6 +40,7 @@ class Clients(models.Model):
     class Meta:
         verbose_name_plural = "Clients"
 
+
 class Orders(models.Model):
     id_order = models.AutoField(primary_key=True)
     price = models.IntegerField()

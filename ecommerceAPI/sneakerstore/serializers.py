@@ -28,10 +28,10 @@ class SneakerSerializer(serializers.HyperlinkedModelSerializer):
 class OrdersSerializer(serializers.HyperlinkedModelSerializer):
     client = serializers.SlugRelatedField(queryset=Clients.objects.all(), slug_field='email')
     sneakers =  serializers.SlugRelatedField(queryset=Sneakers.objects.all(), slug_field='name')
-
-
     class Meta:
         model = Orders
         fields = ['url', 'id_order', 'price','quantity','purchase_date','payment_method','client','sneakers']
+
+
 
     
