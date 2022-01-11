@@ -18,7 +18,7 @@ class Sneakers (models.Model):
     brand_name = models.CharField(max_length=50)
     size = models.IntegerField()
     color_way = models.CharField(max_length=45)
-    id_type = models.ForeignKey(Type, related_name = 'sneakers', on_delete=models.CASCADE)
+    type = models.ForeignKey(Type, related_name = 'sneakers', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name} {self.color_way}'
@@ -48,8 +48,8 @@ class Orders(models.Model):
     payment_method = models.CharField(max_length=20)
     payment_date = models.DateTimeField()
     shipment_method = models.CharField(max_length=20)
-    id_sneakers =  models.ForeignKey(Sneakers,related_name='orders', on_delete=models.CASCADE)
-    id_client =  models.ForeignKey(Clients, related_name='orders', on_delete=models.CASCADE)
+    sneakers =  models.ForeignKey(Sneakers,related_name='orders', on_delete=models.CASCADE)
+    client =  models.ForeignKey(Clients, related_name='orders', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{str(self.id_order)}, {str(self.id_client)}'
