@@ -35,7 +35,7 @@ class ClientList(generics.ListCreateAPIView):
 class ClientDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Clients.objects.all()
     serializer_class = ClientSerializer
-    name = 'client-detail'
+    name = 'clients-detail'
 
 class OrdersList(generics.ListCreateAPIView):
     queryset = Orders.objects.all()
