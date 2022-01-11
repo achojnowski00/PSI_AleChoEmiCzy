@@ -1,0 +1,3 @@
+phoneNumbers = [555324666, 607888444, 555324666, 505664876, 513222111, 606333555, 513222111]
+new = list(set(phoneNumbers))
+print(new)
