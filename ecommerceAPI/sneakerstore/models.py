@@ -19,6 +19,7 @@ class Sneakers (models.Model):
     size = models.IntegerField()
     color_way = models.CharField(max_length=45)
     type = models.ForeignKey(Type, related_name = 'sneakers', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', related_name='books', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name} {self.color_way}'
@@ -55,7 +56,7 @@ class Orders(models.Model):
     client =  models.ForeignKey(Clients, related_name='orders', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{str(self.id_order)}, {str(self.id_client)}'
+        return f'{str(self.id_order)}, {str(self.client)}'
         
     class Meta:
         verbose_name_plural = "Orders"

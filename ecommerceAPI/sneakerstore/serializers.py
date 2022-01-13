@@ -20,10 +20,11 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
 
 class SneakerSerializer(serializers.HyperlinkedModelSerializer):
     type = serializers.SlugRelatedField(queryset=Type.objects.all(), slug_field='name_type')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Sneakers
-        fields = ['url', 'id_sneakers', 'name', 'price', 'stock', 'brand_name', 'size', 'color_way', 'type']
+        fields = ['url', 'id_sneakers', 'name', 'price', 'stock', 'brand_name', 'size', 'color_way','type','owner' ]
     
     def validate_price(self, value):
         if value<=0:
@@ -32,7 +33,7 @@ class SneakerSerializer(serializers.HyperlinkedModelSerializer):
     
     def validate_stock(self, value):
         if value<0:
-            raise serializers.ValidationError("Don't make quantity lower or equal to zero", )
+            raise serializers.ValidationError("Don't make quantity lower to zero", )
         return value
     def validate_size(self, value):
         if value<=0 or value>60:
@@ -55,7 +56,7 @@ class OrdersSerializer(serializers.HyperlinkedModelSerializer):
         return value
     def validate_quantity(self, value):
         if value<=0:
-            raise serializers.ValidationError("Don't make quantity lower to zero", )
+            raise serializers.ValidationError("Don't make quantity lower or equal to zero", )
         return value
 
 
